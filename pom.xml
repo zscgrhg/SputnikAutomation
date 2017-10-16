@@ -22,6 +22,7 @@
         <phase.edge>none</phase.edge>
         <phase.ie>none</phase.ie>
         <phase.htmlunit>none</phase.htmlunit>
+        <geb.baseUrl></geb.baseUrl>
     </properties>
     <dependencies>
         <dependency>
@@ -301,6 +302,21 @@
                 <chrome.driverPath>${project.basedir}/driver/windows/chromedriver.exe</chrome.driverPath>
                 <edge.driverPath>${project.basedir}/driver/windows/MicrosoftWebDriver.exe</edge.driverPath>
                 <ie.driverPath>${project.basedir}/driver/windows/IEDriverServer.exe</ie.driverPath>
+            </properties>
+        </profile>
+        <!-- !windows-->
+        <profile>
+            <id>not-windows</id>
+            <activation>
+                <os>
+                    <family>!windows</family>
+                </os>
+            </activation>
+            <properties>
+                <firefox.driverPath>none</firefox.driverPath>
+                <chrome.driverPath>none</chrome.driverPath>
+                <edge.driverPath>none</edge.driverPath>
+                <ie.driverPath>none</ie.driverPath>
             </properties>
         </profile>
         <!-- 本地开发环境 -->
